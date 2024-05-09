@@ -24,6 +24,7 @@ window.onload = () => {
   ])
 
   let currentPath = window.location.pathname
+  console.log(currentPath)
   if (currentPath === '/') {
     root.innerHTML = 'You are on Home page'
   } else {
@@ -38,7 +39,7 @@ window.onload = () => {
   let definedRoutes = Array.from(document.querySelectorAll('[router-link]'));
   let navigate = e => {
     let route = e.target.attributes[0].value;
-    console.log(e.target.attributes)
+
     // redirect to the router instance
     let routeInfo = routerInstance.routes.filter(r => r.path === route)[0]
     if (!routeInfo) {
